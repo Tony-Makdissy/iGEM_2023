@@ -11,7 +11,7 @@ class strip_protein(Bio.PDB.Select):
 ```
 I have the modified PDB on the left and the original one on the right. 
 I've selected one of the residues that were removed from the structure.
-![](/home/tony/PycharmProjects/iGEM_2023/figures_for_personal_records/12July2023_0.png "WOW")
+![](figures_for_personal_records/12July2023_0.png)
 
 ## 2023-07-13
 After combining the two structures (binder + target), I loaded the combined structure into Biopython.
@@ -29,4 +29,4 @@ diffused_residues_coordinates is a numpy array of the coordinates of the residue
 
 and here are screenshots of the result:
 
-![](/home/tony/PycharmProjects/iGEM_2023/figures_for_personal_records/13July2023_0.png) ![](/home/tony/PycharmProjects/iGEM_2023/figures_for_personal_records/13July2023_1.png) ![](/home/tony/PycharmProjects/iGEM_2023/figures_for_personal_records/13July2023_2.png)
+![](figures_for_personal_records/13July2023_0.png) ![](figures_for_personal_records/13July2023_1.png) ![](figures_for_personal_records/13July2023_2.png)
