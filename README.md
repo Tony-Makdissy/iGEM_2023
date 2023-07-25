@@ -9,7 +9,7 @@ I used the following resources to learn how to use Biopython to modify protein s
 
 I highly doubt these resources are enough to get good enough, but meh I'm not a bioinformatician.
 
-## steps
+## Old steps
 1. Download and load protein structures (binder + target).
 2. Strip the water molecules and hetero-atoms then save the new structure.
 3. Combine the two structures into one, using ChimeraX. (This is done manually)
