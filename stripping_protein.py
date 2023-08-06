@@ -15,7 +15,7 @@ class strip_protein(Bio.PDB.Select):
 
 
 diffused_residues_coordinates = None  # to be changed later (step 5)
-
+diffusion_radius = None  # to be changed later (step 5)
 
 class reduce_protein(Bio.PDB.Select):
     """
@@ -23,7 +23,7 @@ class reduce_protein(Bio.PDB.Select):
     residues that are to be diffused
     """
     def accept_residue(self, residue):
-        diffusion_radius = 30
+        global diffusion_radius
         distances = np.linalg.norm(diffused_residues_coordinates - residue.center_of_mass(), axis=1)
         # diffused_residues_coordinates is defined as a global variable, but it is not initialized on step 5
         return np.any(distances <= diffusion_radius)
@@ -94,12 +94,14 @@ if __name__ == '__main__':
     diffused_residues = []
     for model in target.structure:
         for chain in model:
-            if chain.get_id() == "A": continue
+            if chain.get_id() != "B": continue
             for residue in chain:
-                if residue.get_id()[1] in  list(range(126,136)) : diffused_residues.append(residue)
+                if residue.get_id()[1] in [39, 42, 447, 449, 65]: diffused_residues.append(residue)
+
+    diffusion_radius = 20
 
     diffused_residues_coordinates = np.array([i.center_of_mass() for i in diffused_residues])
-    target.save_structure("7kzf", saving_name="7kzf_reduced_around_X126_to_135", selection_class=reduce_protein(), saving_directory="reduced_protein")
+    target.save_structure("7kzf", saving_name=f"7kzf_B39_42_65_447_449_r{diffusion_radius}", selection_class=reduce_protein(), saving_directory="reduced_protein")
 
 
 
