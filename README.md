@@ -9,6 +9,9 @@ I used the following resources to learn how to use Biopython to modify protein s
 
 I highly doubt these resources are enough to get good enough, but meh I'm not a bioinformatician.
 
+I used the following resources to learn parrallel programming in python.
+- [random article](https://www.machinelearningplus.com/python/parallel-processing-python/?expand_article=1)
+
 ## Old steps
 1. Download and load protein structures (binder + target).
 2. Strip the water molecules and hetero-atoms then save the new structure.
