@@ -114,4 +114,4 @@ df["mpnn_sampling_temp"] = 0.1
 print(df["num_designs"].sum())
 
 # save a tsv file and name the index coloumn as id
-df.to_csv("firs_patch_runs_parameters.csv", index_label="run_id")
+df.to_csv("first_patch_runs_parameters.csv", index_label="run_id")

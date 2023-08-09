@@ -28,6 +28,15 @@ class reduce_protein(Bio.PDB.Select):
         # diffused_residues_coordinates is defined as a global variable, but it is not initialized on step 5
         return np.any(distances <= diffusion_radius)
 
+class pick_chain(Bio.PDB.Select):
+    """
+    This class is used to pick a specific chain from the protein
+    """
+    def __init__(self, chain_id):
+        self.chain_id = chain_id
+
+    def accept_chain(self, chain):
+        return chain.get_id() == self.chain_id
 
 class default_saving_criteria(Bio.PDB.Select):
     """ This class is used to save the whole protein """
