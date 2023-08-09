@@ -1,5 +1,8 @@
 # Protein Structure Modifications
 
+## Notes about 1st Patch
+It is done almost manually, future runs will be more automated.
+
 ## Resources
 I used the following resources to learn how to use Biopython to modify protein structures.
 - [official tutorial](http://biopython.org/DIST/docs/tutorial/Tutorial.pdf)
