@@ -106,7 +106,7 @@ valid_seq_ids = list(valid_seq_ids["sequence_global_id"])
 
 exit()
 
-# create a pool of 3 processes
+# create a pool of n processes
 pool = mp.Pool(processes=2)
 # map the dock function to the sequence_global_id column of sequences_summary dataframe
 pool.map_async(dock, valid_seq_ids)
