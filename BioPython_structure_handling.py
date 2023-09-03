@@ -164,7 +164,9 @@ class Protein:
         else:
             raise Exception("Dude, what file type is this?")
 
-        self.structure = parser.get_structure(structure_name, f"{reading_directory}/{structure_name}.{file_type}")
+        if reading_directory != '':
+            reading_directory = f"{reading_directory}/"
+        self.structure = parser.get_structure(structure_name, f"{reading_directory}{structure_name}.{file_type}")
 
     # TODO: remove structure_name parameter it makes no sense
     def save_structure(self, structure_name, saving_name=None, saving_directory="BioPython_modified_structures",
