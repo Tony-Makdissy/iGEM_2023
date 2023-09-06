@@ -2,14 +2,14 @@
 
 
 ## basic usage for creating reduced structures
-in `main.py` define: 
+There is a json file which contains:
 - `run` which is the number of the run ex: `run = 1`
 - `res_nums` which is a list of the residue numbers to keep ex: `res_nums = [1, 2, 3, 4, 5]`
-- `chain_mode` which is the mode for selecting chains ex: `chain_mode = "X"` for chosing all the cahins or `chain_mode = "A"` for chosing only chain A
 - `keep_radius` which is the radius to keep around the selected residues ex: `keep_radius = 50`
+- other information which is not used in this script
 
-the resulting file can be found at `BioPython_modified_structures` directory.
-
+This json file is then read by the code and reduced structures are created for each of the residue numbers in the list.
+The reduced structures are saved in the `BioPython_modified_structures` folder.
 
 ## Resources
 I used the following resources to learn how to use Biopython to modify protein structures.
