@@ -1,9 +1,7 @@
 import os
 import Bio.PDB
+import warnings
 
-
-# TODO: when you use captial letters for structure names, it will not work! becuse the generated file will be in lower case
-# EX: protein.read_structure("7KZF", generate=True)
 
 class Protein:
     """ This class is used to load, save and modify protein structures """
@@ -154,6 +152,12 @@ class Protein:
     def read_structure(self, structure_name, reading_directory='', generate=False, generate_directory="PDB",
                        file_type="cif"):
         """ This function is used to read a protein structure from a file or from the PDB database"""
+
+        # cheak if all the structure_name is in lower case, if nat raise a warning and change it to lower case
+        if structure_name != structure_name.lower():
+            warnings.warn("structure_name is changed to lower case")
+            structure_name = structure_name.lower()
+
         if generate:
             reading_directory = generate_directory
             self.generate_structure(structure_name, generate_directory)
@@ -169,6 +173,7 @@ class Protein:
         self.structure = parser.get_structure(structure_name, f"{reading_directory}{structure_name}.{file_type}")
 
     # TODO: remove structure_name parameter it makes no sense
+    # TODO: use a dictionary to pass the selection class arguments
     def save_structure(self, structure_name, saving_name=None, saving_directory="BioPython_modified_structures",
                        selection_class=general_selection_class(), replace=False):
         """ This function is used to save a protein structure to a file """

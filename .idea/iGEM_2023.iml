@@ -5,6 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/HDOCKlite-v1.1" />
       <excludeFolder url="file://$MODULE_DIR$/RFdiffusion_finished_runs" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/digital_ocean_2" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
